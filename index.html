@@ -1,0 +1,120 @@
+<!DOCTYPE html> <!-- Déclare que le document est en HTML5 -->
+<html lang="en"> <!-- Début du document HTML avec la langue définie en anglais -->
+<head>
+    <!-- Métadonnées essentielles -->
+    <meta charset="UTF-8"> <!-- Encodage des caractères en UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuration de la vue mobile -->
+
+    <!-- Liaison avec les fichiers CSS -->
+    <link rel="stylesheet" href="/css/neumorphique.css"> <!-- Style actif : design neumorphique -->
+
+    <!-- 
+    Styles alternatifs commentés - décommenter pour changer le thème
+    Chaque style propose une approche visuelle différente :
+    - Futuriste : Design moderne avec effets néon
+    - Pixel Art : Style rétro inspiré des jeux 8-bit
+    - Glassmorphism : Effet de verre et transparence
+    - Minimalisme : Design épuré et simple
+    - Asymétrique : Layout non conventionnel et dynamique
+    -->
+    <!-- 
+    <link rel="stylesheet" href="/css/futuriste.css"> 
+    <link rel="stylesheet" href="/css/pixel_art.css">
+    <link rel="stylesheet" href="/css/glassmorphism.css">
+    <link rel="stylesheet" href="/css/minimalisme.css">
+    <link rel="stylesheet" href="/css/asymétrique_design.css">
+    -->
+
+    <title>LinkTree</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
+</head>
+
+<body> <!-- Corps de la page -->
+    <!-- En-tête de la page -->
+    <header>
+        <!-- Barre de navigation -->
+        <nav class="navbar">
+            <!-- Éléments de navigation -->
+            <div class="nav-item">
+                <a href="https://uixbydenis.eu/index.html" class="active" target="_blank">Home</a>
+                <!-- target="_blank" ouvre le lien dans un nouvel onglet -->
+            </div>
+            <div class="nav-item">
+                <a href="https://uixbydenis.eu/public/pages/main/projects.html" target="_blank">Projects</a>
+            </div>
+            <div class="nav-item">
+                <a href="https://uixbydenis.eu/public/pages/main/resume.html" target="_blank">Resume</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenu principal -->
+    <main> 
+        <!-- Section de présentation -->
+        <div class="presentation">
+            <!-- Photo de profil -->
+            <div class="image-box">
+                <img src="/img/Denis 3.png" alt="Denis" class="responsive-image">
+                <!-- class="responsive-image" assure que l'image s'adapte à son conteneur -->
+            </div>
+
+            <!-- Titre et sous-titre -->
+            <div class="TitreSsTitre">
+                <h1>LinkTree</h1>
+                <h2>Discover my work and see where you can find me</h2>
+            </div>
+
+            <!-- Liste des boutons/liens -->
+            <div class="btnList">
+                <!-- Chaque bouton est un lien stylisé -->
+                <button class="button1">    
+                    <a href="https://uixbydenis.eu/index.html" target="_blank" rel="noopener noreferrer">
+                        My Portfolio
+                    </a>
+                    <!-- rel="noopener noreferrer" améliore la sécurité pour les liens externes -->
+                </button>
+            
+                <button class="button1">        
+                    <a href="https://uixbydenis.eu/public/pages/main/projects.html" target="_blank" rel="noopener noreferrer">
+                        My projects
+                    </a>
+                </button>
+            
+                <button class="button1">    
+                    <a href="https://uixbydenis.eu/public/pages/main/resume.html" target="_blank" rel="noopener noreferrer">
+                        My Resume
+                    </a>
+                </button>
+
+                <button class="button1">    
+                    <a href="http://www.houseofpeers.store" target="_blank" rel="noopener noreferrer">
+                        My blog: House of Peers
+                    </a>
+                </button>
+            </div>
+
+            <!-- Container pour les icônes de réseaux sociaux -->
+            <div class="logo-container">
+                <!-- LinkedIn -->
+                <div class="logo-placeholder"> 
+                    <a href="https://www.linkedin.com" target="_blank">
+                        <img src="/img/linkedin.png" alt="LinkedIn" class="social-icon">
+                    </a>
+                </div>
+                <!-- GitHub -->
+                <div class="logo-placeholder"> 
+                    <a href="https://github.com" target="_blank">
+                        <img src="/img/github.png" alt="GitHub" class="social-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Portfolio. Tous droits réservés.</p> <!-- Notice de copyright -->
+        </div>
+    </footer>
+</body>
+</html>

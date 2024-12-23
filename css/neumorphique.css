@@ -1,0 +1,264 @@
+/* Style Neumorphique - Mobile First */
+/* Définition des variables CSS pour une maintenance facile et une cohérence visuelle */
+:root {
+    --background: #e0e5ec;     /* Couleur de fond principale, gris clair doux */
+    --text-color: #2d3436;     /* Couleur de texte, gris foncé pour un bon contraste */
+    --primary-color: #4a90e2;  /* Couleur d'accent, bleu pour les interactions */
+    --shadow-light: #ffffff;   /* Ombre claire pour l'effet neumorphique */
+    --shadow-dark: #a3b1c6;    /* Ombre foncée pour l'effet neumorphique */
+    --hover-color: #4a90e2;    /* Couleur au survol, même que primary pour la cohérence */
+}
+
+/* Reset CSS de base */
+* {
+    box-sizing: border-box;  /* Inclut padding et border dans la largeur totale */
+    margin: 0;              /* Supprime les marges par défaut */
+    padding: 0;             /* Supprime les paddings par défaut */
+}
+
+/* Style de base du corps de la page */
+body {
+    background: var(--background);     /* Utilise la couleur de fond définie */
+    color: var(--text-color);         /* Couleur de texte principale */
+    font-family: 'Poppins', sans-serif; /* Police moderne et lisible */
+    min-height: 100vh;                /* Hauteur minimale de 100% de la fenêtre */
+    display: flex;                    /* Active Flexbox */
+    flex-direction: column;           /* Empile les éléments verticalement */
+}
+
+/* Barre de navigation */
+.navbar {
+    background: var(--background);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;    /* Espace égal entre les éléments */
+    width: 100%;
+    position: fixed;                  /* Fixe la navbar en haut */
+    top: 0;
+    z-index: 1000;                   /* Assure que la navbar reste au-dessus */
+    /* Effet neumorphique avec double ombre */
+    box-shadow: 
+        5px 5px 10px var(--shadow-dark),    /* Ombre portée droite/bas */
+        -5px -5px 10px var(--shadow-light); /* Highlight gauche/haut */
+}
+
+/* Liens de navigation */
+.nav-item a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+    border-radius: 10px;              /* Coins arrondis */
+    transition: all 0.3s ease;        /* Animation douce */
+    background: var(--background);
+}
+
+/* Effet au survol des liens */
+.nav-item a:hover {
+    color: var(--hover-color);
+    /* Effet neumorphique enfoncé */
+    box-shadow: 
+        inset 3px 3px 6px var(--shadow-dark),     /* Ombre intérieure */
+        inset -3px -3px 6px var(--shadow-light);  /* Highlight intérieur */
+}
+
+/* Contenu principal */
+main {
+    flex: 1;                          /* Prend tout l'espace disponible */
+    padding: 1rem;
+    max-width: 100%;
+    width: 100%;
+    margin: 40px auto;                /* Marge pour la navbar fixe */
+    padding-top: 4rem;
+}
+
+
+/* Conteneur de l'image de profil */
+.image-box {
+    width: 150px;
+    height: 150px;
+    margin: 1.5rem auto;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    background: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        8px 8px 16px var(--shadow-dark),
+        -8px -8px 16px var(--shadow-light);
+}
+
+/* Image responsive */
+.responsive-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;    /* Ajustez cette valeur pour descendre l'image */
+    border-radius: 50%;
+    display: block;
+}
+
+/* Section titre et sous-titre */
+.TitreSsTitre {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+/* Style du titre principal */
+h1 {
+    font-size: 2rem;
+    color: var(--text-color);
+    /* Effet de texte neumorphique */
+    text-shadow: 
+        2px 2px 4px var(--shadow-dark),
+        -2px -2px 4px var(--shadow-light);
+}
+
+/* Style du sous-titre */
+h2 {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    padding: 10px 50px;    /* 0 en haut et bas, 15px à gauche et droite */
+    color: var(--text-color);
+    opacity: 0.8;      /* Légèrement plus clair que h1 */
+}
+
+/* Liste des boutons */
+.btnList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Style des boutons */
+.button1 {
+    width: 100%;
+    background: var(--background);
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    /* Effet neumorphique standard */
+    box-shadow: 
+        5px 5px 10px var(--shadow-dark),
+        -5px -5px 10px var(--shadow-light);
+}
+
+/* Effet au survol des boutons */
+.button1:hover {
+    transform: translateY(-2px);      /* Légère élévation */
+    /* Ombre plus prononcée */
+    box-shadow: 
+        7px 7px 14px var(--shadow-dark),
+        -7px -7px 14px var(--shadow-light);
+}
+
+/* Effet au clic des boutons */
+.button1:active {
+    transform: translateY(1px);       /* Effet d'enfoncement */
+    /* Effet neumorphique enfoncé */
+    box-shadow: 
+        inset 3px 3px 6px var(--shadow-dark),
+        inset -3px -3px 6px var(--shadow-light);
+}
+
+/* Liens dans les boutons */
+.button1 a {
+    display: block;
+    padding: 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Conteneur des icônes sociales */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 10px;
+    padding: 1.5rem;
+    border-radius: 20px;
+    background: var(--background);
+}
+
+/* Style des icônes sociales */
+.social-icon {
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+    border-radius: 50%;               /* Forme circulaire */
+    padding: 10px;
+    background: var(--background);
+    /* Effet neumorphique */
+    box-shadow: 
+        5px 5px 10px var(--shadow-dark),
+        -5px -5px 10px var(--shadow-light);
+}
+
+/* Effet au survol des icônes */
+.social-icon:hover {
+    transform: translateY(-3px);      /* Élévation */
+    /* Effet enfoncé */
+    box-shadow: 
+        inset 3px 3px 6px var(--shadow-dark),
+        inset -3px -3px 6px var(--shadow-light);
+}
+
+/* Style des liens */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Pied de page */
+.footer {
+    background: var(--background);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    /* Ombre unique vers le haut */
+    box-shadow: 
+        0 -5px 10px var(--shadow-dark);
+}
+
+/* Media Queries pour les tablettes */
+@media screen and (min-width: 768px) {
+    .navbar {
+        position: static;             /* Navbar non fixée sur tablette */
+        padding: 1.2rem;
+    }
+
+    main {
+        padding: 2rem;
+    }
+
+    .image-box {
+        width: 180px;                /* Image plus grande */
+        height: 180px;
+    }
+
+    h1 { font-size: 2.5rem; }        /* Texte plus grand */
+    h2 { font-size: 1.4rem; }
+
+    .social-icon {
+        width: 55px;                 /* Icônes plus grandes */
+        height: 55px;
+    }
+}
+
+/* Media Queries pour les écrans larges */
+@media screen and (min-width: 1024px) {
+    main {
+        max-width: 800px;            /* Largeur maximale du contenu */
+    }
+
+    .button1:hover {
+        transform: translateY(-3px);  /* Effet hover plus prononcé */
+    }
+}
