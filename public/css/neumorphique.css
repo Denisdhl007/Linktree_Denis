@@ -18,8 +18,6 @@
     transition: all 0.3s ease-in-out;
 }
 
-
-
 /* Base HTML et Body */
 html, body {
     height: 100vh;
@@ -120,6 +118,7 @@ h2 {
 
 /* Style des boutons */
 .button1 {
+    animation: fadeIn 0.5s ease-out;
     width: 100%;
     background: var(--background);
     border: none;
@@ -328,6 +327,3 @@ body {
     }
 }
 
-.button1 {
-    animation: fadeIn 0.5s ease-out;
-}
