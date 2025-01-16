@@ -68,8 +68,11 @@ main {
     padding: 1rem;
     max-width: 100%;
     width: 100%;
-    margin: 40px auto;                /* Marge pour la navbar fixe */
+    margin: 0px auto;                /* Marge pour la navbar fixe */
     padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
