@@ -1,16 +1,15 @@
 /* Style Neumorphique - Mobile First */
-/* Définition des variables CSS pour une maintenance facile et une cohérence visuelle */
 :root {
-    --background: #e0e5ec;     /* Couleur de fond principale, gris clair doux */
-    --text-color: #2d3436;     /* Couleur de texte, gris foncé pour un bon contraste */
-    --primary-color: #4a90e2;  /* Couleur d'accent, bleu pour les interactions */
-    --shadow-light: #ffffff;   /* Ombre claire pour l'effet neumorphique */
-    --shadow-dark: #a3b1c6;    /* Ombre foncée pour l'effet neumorphique */
-    --hover-color: #4a90e2;    /* Couleur au survol, même que primary pour la cohérence */
-    --navbar-height: 60px;     /* Hauteur de la barre de navigation */
+    --background: #e0e5ec;
+    --text-color: #2d3436;
+    --primary-color: #4a90e2;
+    --shadow-light: #ffffff;
+    --shadow-dark: #a3b1c6;
+    --hover-color: #4a90e2;
+    --navbar-height: 60px;
 }
 
-/* Reset CSS de base */
+/* Reset CSS */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -33,29 +32,45 @@ body {
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
     position: relative;
+    overflow: hidden;
 }
 
 /* Contenu principal */
 main {
-
-    flex: 1 0 auto;
+    flex: 1;
     width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 0.5rem;
-    justify-content: center;
+    padding: 2rem 0.5rem;
+    justify-content: space-between;
     align-items: center;
+    overflow: hidden;
+}
+
+/* Container Profil */
+.container-profil {
+    width: 92%;
+    max-width: 500px;
+    padding: 2rem 1rem;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin: 1.5rem auto;
+    background: var(--background);
+    box-shadow: 
+        8px 8px 16px var(--shadow-dark),
+        -8px -8px 16px var(--shadow-light);
 }
 
 /* Conteneur de l'image de profil */
 .image-box {
     border: #a2bdc5 solid 3px;
-    width: 150px;
-    height: 200px;
-    margin: 3.75rem auto;
+    width: 120px;
+    height: 120px;
+    margin: 2rem auto;
     border-radius: 50%;
     position: relative;
     overflow: hidden;
@@ -81,38 +96,36 @@ main {
 /* Section titre et sous-titre */
 .TitreSsTitre {
     text-align: center;
-    margin: 0.75rem 0;
+    margin: 1.5rem 0;
 }
 
 /* Style du titre principal */
 h1 {
-    font-size: 1.5rem;
+    font-size: calc(1rem + 1vw);
     color: var(--text-color);
     text-shadow: 
         2px 2px 4px var(--shadow-dark),
         -2px -2px 4px var(--shadow-light);
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
+    margin: 0.75rem 0;
 }
 
 /* Style du sous-titre */
 h2 {
-    font-size: 1rem;
-    padding: 5px 25px;
+    font-size: calc(0.8rem + 0.5vw);
+    padding: 0.5rem 1rem;
     color: var(--text-color);
     opacity: 0.8;
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin: 0.75rem 0;
 }
 
 /* Liste des boutons */
 .btnList {
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 1rem;
     width: 92%;
     max-width: 500px;
-    margin: 0.5rem auto;
+    margin: 1.5rem auto;
     flex-grow: 1;
 }
 
@@ -160,10 +173,10 @@ h2 {
 .logo-container {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 2rem;
     padding: 1rem;
     border-radius: 15px;
-    margin-top: 1.5rem ;
+    margin-top: 2rem;
     width: 92%;
     max-width: 500px;
     background: var(--background);
@@ -194,11 +207,11 @@ h2 {
 .footer {
     background: var(--background);
     text-align: center;
-    padding: 0.75rem;
+    padding: 1rem;
     font-size: 0.75rem;
     width: 100%;
     box-shadow: 0 -5px 10px var(--shadow-dark);
-    margin-top: auto;
+    margin-top: 2rem;
     position: relative;
     z-index: 10;
 }
@@ -206,52 +219,30 @@ h2 {
 /* Media Queries pour les tablettes */
 @media screen and (min-width: 768px) {
     body {
-        overflow-y: auto;
-    }
-
-    .navbar {
-        padding: 1rem;
-    }
-
-    main {
-        padding: 1rem;
-    }
-
-    .image-box {
-        width: 140px;
-        height: 140px;
-        margin: 1rem auto;
-    }
-
-    h1 { 
-        font-size: 2rem; 
-        margin-bottom: 0.5rem;
+        overflow: hidden;
     }
     
-    h2 { 
-        font-size: 1.2rem;
-        padding: 8px 35px;
+    main {
+        padding: 3rem 0.5rem;
     }
-
-    .nav-item a {
-        padding: 0.8rem 1.2rem;
-        font-size: 1rem;
+    
+    .container-profil {
+        padding: 2.5rem 1rem;
     }
-
+    
+    .btnList {
+        gap: 1.25rem;
+    }
+    
     .button1 a {
         padding: 0.9rem;
         font-size: 1rem;
     }
-
+    
     .social-icon {
         width: 45px;
         height: 45px;
         padding: 10px;
-    }
-
-    .footer {
-        padding: 1rem;
-        font-size: 0.8rem;
     }
 }
 
@@ -260,46 +251,43 @@ h2 {
     body {
         align-items: center;
     }
-
+    
     main {
-        max-width: 800px;
-        padding: 1.5rem;
+        padding: 3rem 0.5rem;
     }
-
-    .image-box {
-        width: 160px;
-        height: 160px;
-        margin: 1.5rem auto;
-    }
-
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.3rem; }
-
+    
     .button1 {
         transition: all 0.4s ease;
     }
-
+    
     .button1:hover {
         transform: translateY(-3px);
     }
-
+    
     .logo-container {
         gap: 2rem;
-        padding: 1.5rem;
     }
-
+    
     .social-icon {
         width: 50px;
         height: 50px;
         padding: 10px;
     }
+}
 
-    .footer {
-        padding: 1.25rem;
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@keyframes slideIn {
+@keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -313,17 +301,3 @@ h2 {
 body {
     animation: slideIn 1s ease-in-out;
 }
-
-
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
