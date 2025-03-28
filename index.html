@@ -1,12 +1,45 @@
-<!DOCTYPE html> <!-- Déclare que le document est en HTML5 -->
-<html lang="en"> <!-- Début du document HTML avec la langue définie en anglais -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <!-- Métadonnées essentielles -->
-    <meta charset="UTF-8"> <!-- Encodage des caractères en UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuration de la vue mobile -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Découvrez tous mes liens utiles et ressources essentielles sur mon LinkTree personnalisé.">
+    <meta name="keywords" content="LinkTree, liens utiles, ressources, Denis, réseaux sociaux, portfolio">
+    <meta name="author" content="Denis">
+    <link rel="canonical" href="https://www.votresite.com/denis-linktree">
+
+    <!-- Open Graph (SEO & Réseaux sociaux) -->
+    <meta property="og:title" content="Denis' LinkTree - Tous mes liens utiles">
+    <meta property="og:description" content="Accédez facilement à toutes mes ressources et liens essentiels en un clic.">
+    <meta property="og:image" content="https://www.votresite.com/public/img/preview.jpg">
+    <meta property="og:url" content="https://www.votresite.com/denis-linktree">
+    <meta property="og:type" content="website">
+
+     <!-- Données structurées JSON-LD pour Google -->
+     <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Denis' LinkTree",
+            "description": "Découvrez tous mes liens utiles et ressources essentielles sur mon LinkTree personnalisé.",
+            "url": "https://www.votresite.com/denis-linktree",
+            "author": {
+                "@type": "Person",
+                "name": "Denis"
+            }
+        }
+        </script>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./public/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./public/img/favicon/tabler--brand-linktree.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="./public/img/favicon/tabler--brand-linktree.svg">
 
     <!-- Liaison avec les fichiers CSS -->
-    <link rel="stylesheet" href="/public/css/neumorphique.css"> <!-- Style actif : design neumorphique -->
+    <link rel="stylesheet" href="./public/css/neumorphique.css">
 
     <!-- 
     Styles alternatifs commentés - décommenter pour changer le thème
@@ -25,23 +58,25 @@
     <link rel="stylesheet" href="/public/css/asymétrique_design.css">
     -->
 
-    <title>LinkTree</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
+    <title>Denis' LinkTree</title>
 </head>
-
+    
 
 <body> <!-- Corps de la page -->
+
+    <header class="container-profil">
+        <!-- Photo de profil -->
+        <div class="image-box">
+            <img src="./public/img/Denis 3.png" alt="Image de Denis" class="responsive-image">
+            <!-- class="responsive-image" assure que l'image s'adapte à son conteneur -->
+        </div>
+    </header>
+
     <!-- Contenu principal -->
     <main> 
         <!-- Section de présentation -->
         <div class="presentation">
-            <!-- Photo de profil -->
-            <div class="container-profil">
-                <div class="image-box">
-                    <img src="/public/img/Denis 3.png" alt="Image de Denis" class="responsive-image">
-                    <!-- class="responsive-image" assure que l'image s'adapte à son conteneur -->
-                </div>
-            </div>
-
+           
             <!-- Titre et sous-titre -->
             <div class="TitreSsTitre">
                 <h1>Denis</h1>
@@ -81,20 +116,20 @@
             <div class="logo-container">
                 <!-- LinkedIn -->
                 <div class="logo-placeholder"> 
-                    <a href="https://www.linkedin.com" target="_blank">
-                        <img src="/public/img/linkedin.png" alt="LinkedIn" class="social-icon">
+                    <a href="https://www.linkedin.com/in/denis-henin" target="_blank">
+                        <img src="./public/img/linkedin.png" alt="LinkedIn" class="social-icon">
                     </a>
                 </div>
                 <!-- GitHub -->
                 <div class="logo-placeholder"> 
-                    <a href="https://github.com" target="_blank">
-                        <img src="/public/img/github.png" alt="GitHub" class="social-icon">
+                    <a href="https://github.com/Denisdhl007" target="_blank">
+                        <img src="./public/img/github.png" alt="GitHub" class="social-icon">
                     </a>
                 </div>
                 <!-- YoutTube -->
                 <div class="logo-placeholder"> 
                     <a href="https://www.youtube.com/@Denis-lc4xw" target="_blank">
-                        <img src="/public/img/youtube.png" alt="YoutTube" class="social-icon">
+                        <img src="./public/img/youtube.png" alt="YoutTube" class="social-icon">
                     </a>
                 </div>
             </div>
@@ -108,6 +143,7 @@
         </div>
     </footer>
 
-<script src="/public/script/main.js"></script>
+<script src="./public/script/main.js"></script>
 </body>
 </html>
+

@@ -1,4 +1,9 @@
-/* Style Neumorphique - Mobile First */
+/* Style Neumorphique - Mobile First
+ * CSS complet pour la page LinkTree avec animation
+ * de porte coulissante verticale 
+ */
+
+/* Variables CSS pour la cohérence des couleurs et ombres */
 :root {
     --background: #e0e5ec;
     --text-color: #2d3436;
@@ -9,7 +14,7 @@
     --navbar-height: 60px;
 }
 
-/* Reset CSS */
+/* Reset CSS - Normalisation des styles de base */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,12 +22,13 @@
     transition: all 0.3s ease-in-out;
 }
 
-/* Base HTML et Body */
+/* Base HTML et Body - Configuration de base de la page */
 html, body {
-    height: 100vh;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: hidden; /* Empêche le défilement de page */
+    width: 100%;
+    height: 100vh;
 }
 
 /* Style de base du corps de la page */
@@ -34,43 +40,56 @@ body {
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    animation: slideIn 1s ease-in-out; /* Animation initiale du body */
 }
 
-/* Contenu principal */
+/* Contenu principal - Structure générale */
 main {
     flex: 1;
-    width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 2rem 0.5rem;
+    padding: 0;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
 }
 
-/* Container Profil */
+/* Conteneur de présentation - Structure principale du contenu */
+.presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0rem 1rem;
+    position: relative; /* Pour le positionnement des enfants */
+    z-index: 1; /* Assure que la présentation est sous les portes pendant l'animation */
+}
+
+/* Container Profil - Élément supérieur servant de "porte du haut" */
 .container-profil {
     width: 92%;
     max-width: 500px;
-    padding: 2rem 1rem;
+    padding: 3.5rem;
+    margin: 0.8rem auto;
     border-top-left-radius: 45px;
     border-top-right-radius: 45px;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
-    margin: 1.5rem auto;
     background: var(--background);
     box-shadow: 
         8px 8px 16px var(--shadow-dark),
         -8px -8px 16px var(--shadow-light);
+    position: relative; /* Pour l'animation */
+    z-index: 5; /* S'assure qu'il reste au-dessus pendant l'animation */
 }
 
-/* Conteneur de l'image de profil */
+/* Conteneur de l'image de profil - Photo circulaire */
 .image-box {
-    border: #a2bdc5 solid 3px;
+    border: #a2bdc5 solid 0.5px;
     width: 120px;
     height: 120px;
-    margin: 2rem auto;
+    margin: 0.75rem auto;
     border-radius: 50%;
     position: relative;
     overflow: hidden;
@@ -83,50 +102,53 @@ main {
         -8px -8px 16px var(--shadow-light);
 }
 
-/* Image responsive */
+/* Image responsive dans le conteneur de profil */
 .responsive-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 8%;
+    object-position: 0% 8%;
     border-radius: 50%;
     display: block;
 }
 
-/* Section titre et sous-titre */
+/* Section titre et sous-titre - Initialement cachée pour l'animation */
 .TitreSsTitre {
     text-align: center;
-    margin: 1.5rem 0;
+    margin: 1rem 0;
+    opacity: 0; /* Caché par défaut pour l'animation */
+    transition: opacity 0.7s ease-in-out;
 }
 
 /* Style du titre principal */
 h1 {
-    font-size: calc(1rem + 1vw);
+    font-size: 3.5rem;
     color: var(--text-color);
     text-shadow: 
         2px 2px 4px var(--shadow-dark),
         -2px -2px 4px var(--shadow-light);
-    margin: 0.75rem 0;
+    margin: 0.25rem 0;
 }
 
 /* Style du sous-titre */
 h2 {
-    font-size: calc(0.8rem + 0.5vw);
-    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    padding: 0.5rem;
     color: var(--text-color);
     opacity: 0.8;
-    margin: 0.75rem 0;
+    margin: 0.25rem 0;
 }
 
-/* Liste des boutons */
+/* Liste des boutons - Initialement cachée pour l'animation */
 .btnList {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    width: 92%;
+    gap: 0.8rem;
+    width: 85%;
     max-width: 500px;
-    margin: 1.5rem auto;
-    flex-grow: 1;
+    margin: 0.5rem auto;
+    opacity: 0; /* Caché par défaut pour l'animation */
+    transition: opacity 0.7s ease-in-out;
 }
 
 /* Style des boutons */
@@ -161,7 +183,7 @@ h2 {
 /* Liens dans les boutons */
 .button1 a {
     display: block;
-    padding: 0.75rem;
+    padding: 0.6rem;
     color: var(--text-color);
     text-decoration: none;
     text-align: center;
@@ -169,26 +191,33 @@ h2 {
     width: 100%;
 }
 
-/* Conteneur des icônes sociales */
+/* Conteneur des icônes sociales - Élément inférieur servant de "porte du bas" */
 .logo-container {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    padding: 1rem;
+    gap: 1.5rem;
+    padding: 1.75rem;
     border-radius: 15px;
-    margin-top: 2rem;
+    margin-top: 0.75rem;
     width: 92%;
     max-width: 500px;
     background: var(--background);
+    box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 45px;
+    border-bottom-left-radius: 45px;
+    z-index: 5; /* S'assure qu'il reste au-dessus pendant l'animation */
+    /* Les propriétés position, top, left seront appliquées par JavaScript */
 }
 
 /* Style des icônes sociales */
 .social-icon {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     transition: all 0.3s ease;
     border-radius: 50%;
-    padding: 8px;
+    padding: 6px;
     background: var(--background);
     box-shadow: 
         5px 5px 10px var(--shadow-dark),
@@ -207,75 +236,161 @@ h2 {
 .footer {
     background: var(--background);
     text-align: center;
-    padding: 1rem;
-    font-size: 0.75rem;
+    padding: 0.2rem;
+    font-size: 0.7rem;
     width: 100%;
     box-shadow: 0 -5px 10px var(--shadow-dark);
-    margin-top: 2rem;
+    margin-top: 0.5rem;
     position: relative;
     z-index: 10;
 }
 
-/* Media Queries pour les tablettes */
-@media screen and (min-width: 768px) {
-    body {
-        overflow: hidden;
-    }
-    
-    main {
-        padding: 3rem 0.5rem;
-    }
-    
+/* ---------------- RESPONSIVE DESIGN ---------------- */
+
+/* Media Queries pour mobiles */
+@media screen and (max-width: 480px) {
+    /* Ajustements du conteneur principal */
     .container-profil {
-        padding: 2.5rem 1rem;
-    }
-    
-    .btnList {
-        gap: 1.25rem;
-    }
-    
-    .button1 a {
-        padding: 0.9rem;
-        font-size: 1rem;
-    }
-    
-    .social-icon {
-        width: 45px;
-        height: 45px;
-        padding: 10px;
-    }
-}
-
-/* Media Queries pour les écrans larges */
-@media screen and (min-width: 1024px) {
-    body {
+        display: flex;
         align-items: center;
+        width: 85%;
+        padding: 2rem;
+        margin: 1.8rem auto;
+
     }
-    
-    main {
-        padding: 3rem 0.5rem;
+
+    /* Réduction de la taille de l'image de profil */
+    .image-box {
+        width: 100px;
+        height: 100px;
+        margin: 0.5rem auto;
     }
-    
+
+    /* Ajustement des marges du titre */
+    .TitreSsTitre {
+        margin: 0.5rem 0;
+    }
+
+    /* Réduction de la taille du texte */
+    h1 {
+        font-size: 2.5rem;
+        margin: 0.25rem 0;
+    }
+
+    h2 {
+        font-size: 1rem;
+        padding: 0.2rem;
+        margin: 0.5rem 0;
+    }
+
+    /* Ajustement des boutons */
     .button1 {
-        transition: all 0.4s ease;
+        border-radius: 12px;
     }
-    
-    .button1:hover {
-        transform: translateY(-3px);
+
+    .button1 a {
+        padding: 0.5rem;
+        font-size: 0.85rem;
     }
-    
+
+    /* Ajustement du conteneur de logos */
     .logo-container {
-        gap: 2rem;
+        gap: 0.75rem;
+        width: 85%;
     }
-    
+
+    /* Réduction de la taille des icônes */
     .social-icon {
-        width: 50px;
-        height: 50px;
-        padding: 10px;
+        width: 30px;
+        height: 30px;
+        padding: 5px;
     }
 }
 
-/* Animations */
+/* Media Queries pour petits mobiles */
+@media screen and (max-width: 360px) {
+    .container-profil {
+        /* padding: 4.5rem; */
+    }
+
+    .image-box {
+        width: 90px;
+        height: 90px;
+        margin: 0.5rem auto;
+    }
+
+    .btnList {
+        gap: 1rem;
+    }
+
+    .button1 a {
+        padding: 0.4rem;
+        font-size: 0.8rem;
+    }
+
+    .social-icon {
+        width: 28px;
+        height: 28px;
+        padding: 4px;
+    }
+}
+
+/* Media Queries pour mode paysage sur mobile */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    /* Réduction drastique des tailles et marges en mode paysage */
+    .container-profil {
+        padding: 0.25rem;
+        margin: 0.25rem auto;
+    }
+    
+    .image-box {
+        width: 70px;
+        height: 70px;
+        margin: 0.25rem auto;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        margin: 0.2rem 0;
+    }
+
+    h2 {
+        font-size: 0.7rem;
+        margin: 0.2rem 0;
+        padding: 0.1rem;
+    }
+
+    .btnList {
+        gap: 0.3rem;
+        margin: 0.3rem auto;
+    }
+
+    .button1 a {
+        padding: 0.3rem;
+        font-size: 0.75rem;
+    }
+
+    .logo-container {
+        gap: 0.5rem;
+        padding: 0.3rem;
+        margin-top: 0.3rem;
+    }
+
+    .social-icon {
+        width: 25px;
+        height: 25px;
+        padding: 3px;
+    }
+
+    .footer {
+        padding: 0.25rem;
+        font-size: 0.6rem;
+    }
+}
+
+/* ---------------- ANIMATIONS ---------------- */
+
+/* Animation d'entrée principale */
 @keyframes slideIn {
     from {
         opacity: 0;
@@ -287,6 +402,7 @@ h2 {
     }
 }
 
+/* Animation de fondu pour les boutons */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -296,8 +412,4 @@ h2 {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-body {
-    animation: slideIn 1s ease-in-out;
 }
